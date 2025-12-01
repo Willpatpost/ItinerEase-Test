@@ -1,0 +1,121 @@
+<!-- labs.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO & Metadata -->
+  <meta name="description" content="ItinerEase Labs – Individual and Group Lab Work" />
+  <meta property="og:title" content="ItinerEase | Labs" />
+  <meta property="og:description" content="Explore individual and group lab submissions from the team." />
+  <meta property="og:url" content="https://willpatpost.github.io/Itiner-Ease/labs.html" />
+  <meta property="og:type" content="website" />
+
+  <title>ItinerEase | Labs</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="labs">
+  <!-- Skip link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div id="header-placeholder"></div>
+
+  <main id="main-content" class="content">
+    <h1>Team Lab Work</h1>
+
+    <!-- ===== DROPDOWN: INDIVIDUAL LABS ===== -->
+    <section class="dropdown-section">
+      <button class="dropdown-toggle" aria-expanded="false" aria-controls="individual-labs">
+        Individual Labs ▼
+      </button>
+
+      <div id="individual-labs" class="dropdown-content" hidden>
+        <p class="dropdown-subtext">Click a lab to view the embedded PDF.</p>
+
+        <div class="pdf-grid">
+
+          <article class="pdf-item">
+            <h3>Crystal Rivas – Lab 2</h3>
+            <iframe
+              src="https://docs.google.com/gview?embedded=true&url=https://willpatpost.github.io/Itiner-Ease/data/documents/labs/individual/crystallab2.pdf"
+              title="Crystal Lab 2 PDF"></iframe>
+          </article>
+
+          <article class="pdf-item">
+            <h3>Stephen Usselman – Lab 2</h3>
+            <iframe
+              src="https://docs.google.com/gview?embedded=true&url=https://willpatpost.github.io/Itiner-Ease/data/documents/labs/individual/stephenlab2.pdf"
+              title="Stephen Lab 2 PDF"></iframe>
+          </article>
+
+          <article class="pdf-item">
+            <h3>William Mbandi – Lab 2</h3>
+            <iframe
+              src="https://docs.google.com/gview?embedded=true&url=https://willpatpost.github.io/Itiner-Ease/data/documents/labs/individual/willmlab2.pdf"
+              title="William Mbandi Lab 2 PDF"></iframe>
+          </article>
+
+          <article class="pdf-item">
+            <h3>William Poston – Lab 2</h3>
+            <iframe
+              src="https://docs.google.com/gview?embedded=true&url=https://willpatpost.github.io/Itiner-Ease/data/documents/labs/individual/willplab2.pdf"
+              title="William Poston Lab 2 PDF"></iframe>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DROPDOWN: GROUP LABS ===== -->
+    <section class="dropdown-section">
+      <button class="dropdown-toggle" aria-expanded="false" aria-controls="group-labs">
+        Group Labs ▼
+      </button>
+
+      <div id="group-labs" class="dropdown-content" hidden>
+        <p class="dropdown-subtext">Click to view the embedded PDF.</p>
+
+        <div class="pdf-grid">
+
+          <article class="pdf-item">
+            <h3>Group Lab 2</h3>
+            <iframe
+              src="https://docs.google.com/gview?embedded=true&url=https://willpatpost.github.io/Itiner-Ease/data/documents/labs/group/grouplab2.pdf"
+              title="Group Lab 2 PDF"></iframe>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- Template loader scripts -->
+  <script src="templateLoader.js"></script>
+  <script src="anotherScript.js"></script>
+
+  <!-- ===== Dropdown Script ===== -->
+  <script>
+    document.querySelectorAll(".dropdown-toggle").forEach(button => {
+      button.addEventListener("click", () => {
+        const contentId = button.getAttribute("aria-controls");
+        const content = document.getElementById(contentId);
+
+        const isOpen = button.getAttribute("aria-expanded") === "true";
+        button.setAttribute("aria-expanded", !isOpen);
+        content.hidden = isOpen;
+
+        button.textContent = button.textContent.replace(
+          isOpen ? "▲" : "▼",
+          isOpen ? "▼" : "▲"
+        );
+      });
+    });
+  </script>
+
+</body>
+</html>
