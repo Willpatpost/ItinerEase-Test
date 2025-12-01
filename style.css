@@ -10,151 +10,135 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Arial', sans-serif;
   line-height: 1.6;
-  background-color: #FFF5EC; /* sand.100 */
-  color: #1A1A1A; /* ink.900 */
+  color: #333;
+  background-color: #f4f4f4;
 }
 
-/* =========================================================
-   UTILITY SPACING & HELPERS
-   ========================================================= */
-.mt-1 { margin-top: 0.5rem; }
-.mt-2 { margin-top: 1rem; }
-.mt-3 { margin-top: 1.5rem; }
-.mt-4 { margin-top: 2rem; }
-.mt-5 { margin-top: 3rem; }
-
-.text-center { text-align: center; }
-
-.img-responsive {
-  width: 100%;
-  height: auto;
-  border-radius: 14px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-}
-
-/* Skip Link */
+/* ============================
+   Skip Link
+   ============================ */
 .skip-link {
   position: absolute;
   top: -40px;
   left: 0;
-  background: #FF8C42;
-  color: #FFF;
+  background: #007BFF;
+  color: #fff;
   padding: 8px;
   z-index: 100;
   transition: top 0.3s;
 }
-.skip-link:focus { top: 0; }
+.skip-link:focus {
+  top: 0;
+}
 
 /* =========================================================
-   HEADER / NAVBAR
+   HEADER / NAVIGATION BAR (Updated with Logo)
    ========================================================= */
 .navbar {
-  background-color: #FFF9F3;
+  background-color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.75rem 2rem;
-  border-bottom: 1px solid #E5E5E5;
+  border-bottom: 1px solid #ddd;
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
 }
 
-.logo-link { display: flex; align-items: center; }
-
+.logo-link {
+  display: flex;
+  align-items: center;
+}
 .logo-img {
   height: 48px;
   width: auto;
+  display: block;
   transition: opacity 0.2s ease;
 }
-.logo-link:hover .logo-img { opacity: 0.85; }
+.logo-link:hover .logo-img {
+  opacity: 0.85;
+}
 
-.nav-links {
+.navbar .nav-links {
   list-style: none;
   display: flex;
 }
-.nav-links li { margin-left: 1.5rem; }
-.nav-links a {
+.navbar .nav-links li {
+  margin-left: 1.5rem;
+}
+.navbar .nav-links a {
   text-decoration: none;
-  color: #1A1A1A;
+  color: #333;
   font-size: 1rem;
   transition: color 0.3s ease;
 }
-.nav-links a:hover,
-.nav-links a.active {
-  color: #D76B00;
+.navbar .nav-links a:hover,
+.navbar .nav-links a.active {
+  color: #007BFF;
 }
 
 /* =========================================================
-   MAIN CONTENT WRAPPER
+   PAGE CONTENT WRAPPER
    ========================================================= */
 main {
   padding: 2rem;
   max-width: 1200px;
   margin: 100px auto;
+  background-color: #f4f4f4;
 }
 
 /* =========================================================
-   SECTION STYLING (GLOBAL)
+   GENERAL SECTION STYLING
    ========================================================= */
 section {
-  background: #FFF9F3;
-  padding: 2rem;
-  border-radius: 14px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
   margin-bottom: 2rem;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 section h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #FF8C42;
+  color: #007BFF;
 }
 
 section p,
 section li {
   font-size: 1.1rem;
-  color: #404040;
+  color: #555;
 }
 
 ul, ol {
   padding-left: 1.5rem;
   margin-top: 1rem;
 }
+li {
+  margin-bottom: 0.5rem;
+}
 
 /* =========================================================
-   COVER IMAGE (HOMEPAGE)
+   COVER IMAGES (Home Page)
    ========================================================= */
 .cover {
   text-align: center;
   margin-top: 1.5rem;
 }
-.cover img {
-  max-width: 900px;
+.cover-image {
   width: 95%;
+  max-width: 900px;
   border-radius: 14px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
 /* =========================================================
-   LINK STYLING
-   ========================================================= */
-.learn-more a,
-a.inline-link {
-  color: #007BFF;
-  font-weight: bold;
-  text-decoration: none;
-}
-.learn-more a:hover,
-a.inline-link:hover {
-  text-decoration: underline;
-}
-
-/* =========================================================
-   FADE-IN ANIMATION
+   FADE-IN SCROLL EFFECT
    ========================================================= */
 .fade-in {
   opacity: 0;
@@ -167,242 +151,177 @@ a.inline-link:hover {
 }
 
 /* =========================================================
-   DROPDOWNS (Reports, Presentations, Labs)
-   ========================================================= */
-.dropdown-section { margin-bottom: 2rem; }
-
-.dropdown-toggle {
-  width: 100%;
-  font-size: 1.3rem;
-  padding: 1rem 1.25rem;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  color: #FFF;
-  background: #FF8C42;
-  transition: background 0.3s ease;
-}
-.dropdown-toggle:hover {
-  background: #D76B00;
-}
-
-.dropdown-content {
-  margin-top: 1rem;
-  padding: 1.5rem;
-  background: #FFF9F3;
-  border-radius: 14px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
-}
-
-.dropdown-subtext {
-  color: #6B6B6B;
-  margin-bottom: 1rem;
-}
-
-/* =========================================================
-   IFRAMES & PDF EMBEDS
+   PRESENTATIONS / IFRAMES
    ========================================================= */
 .iframe-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
 }
-
-iframe {
+.presentation iframe,
+.dropdown-content iframe {
   width: 100%;
   height: 650px;
   border: none;
-  border-radius: 10px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+  border-radius: 6px;
 }
 
 /* =========================================================
-   LABS GRID
+   LABS & REPORTS DROPDOWNS
    ========================================================= */
+.dropdown-section {
+  margin-bottom: 2rem;
+}
+
+.dropdown-toggle {
+  width: 100%;
+  text-align: left;
+  padding: 1rem 1.25rem;
+  background: #007BFF;
+  color: #fff;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.dropdown-toggle:hover {
+  background: #005FCC;
+}
+
+.dropdown-content {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.dropdown-subtext {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+/* PDF grid (Labs) */
 .pdf-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
 }
-
 .pdf-item {
-  background: #FFF9F3;
-  padding: 1.25rem;
-  border-radius: 14px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+  background: #fff;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
 }
-
 .pdf-item h3 {
-  color: #FF8C42;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
+  color: #007BFF;
+}
+.pdf-item iframe {
+  height: 700px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
 }
 
-/* =========================================================
-   PLACEHOLDER BOX
-   ========================================================= */
+/* Placeholder Box */
 .placeholder-box {
-  text-align: center;
-  border: 2px dashed #E5E5E5;
-  background: #FFF5EC;
   padding: 2rem;
-  border-radius: 14px;
-  color: #6B6B6B;
-  font-size: 1.1rem;
+  text-align: center;
+  background: #fafafa;
+  border: 2px dashed #bbb;
+  border-radius: 10px;
+  color: #777;
+  font-size: 1.15rem;
 }
 
 /* =========================================================
-   TEAM PAGE (FLIP CARDS)
+   TEAM PAGE — UPDATED CARD SYSTEM
    ========================================================= */
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
 }
 
+/* Flip Card */
 .card {
   perspective: 1000px;
   cursor: pointer;
 }
-
 .card-inner {
+  width: 100%;
   height: 360px;
   position: relative;
   transition: transform 0.85s;
   transform-style: preserve-3d;
 }
-
 .card.flipped .card-inner {
   transform: rotateY(180deg);
 }
 
+/* Front & Back */
 .card-front,
 .card-back {
-  background: #FFF9F3;
-  border-radius: 14px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-  position: absolute;
-  inset: 0;
+  background: #fff;
   padding: 1.5rem;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  backface-visibility: hidden;
+  text-align: center;
 }
 
-.card-back { transform: rotateY(180deg); }
+.card-back {
+  transform: rotateY(180deg);
+  overflow-y: auto;
+}
 
+/* Headshots */
 .card-front img {
   width: 120px;
   height: 120px;
-  border-radius: 999px;
+  border-radius: 50%;
   object-fit: cover;
   margin: 0 auto;
+  box-shadow: 0 0 0 4px #eee; /* removed blue ring */
 }
 
+/* Name & role alignment */
 .card-front h3,
 .card-back h3 {
+  margin: 0.5rem 0;
   font-size: 1.25rem;
-  margin-top: 0.75rem;
   font-weight: bold;
 }
 
-.role-dev { color: #FF8C42; }
-.role-db  { color: #15803D; }
-.role-ai  { color: #89CFF0; }
-.role-web { color: #D76B00; }
-.role-mentor { color: #075985; }
-
-.card-back p {
-  color: #404040;
+/* Role tag with color variations */
+.role-tag {
+  margin-bottom: 1rem;
+  font-weight: bold;
   font-size: 0.95rem;
-  margin-top: 1rem;
 }
 
-/* =========================================================
-   PRESENTATION THUMBNAILS (NEW)
-   ========================================================= */
-.thumb-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 2rem;
-  margin-top: 1.5rem;
-}
+/* Example role colors — assign appropriately */
+.role-dev { color: #007BFF; }
+.role-db  { color: #28A745; }
+.role-ai  { color: #6F42C1; }
+.role-web { color: #E83E8C; }
+.role-mentor { color: #FD7E14; }
 
-.thumb-card {
-  background: #FFF9F3;
-  border-radius: 14px;
-  padding: 1rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-  text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.thumb-card:hover {
-  cursor: pointer;
-  transform: scale(1.03);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.10);
-}
-
-.thumb-card img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 0.8rem;
-}
-
-/* Download Button */
-.download-btn {
-  display: inline-block;
+/* Back card text */
+.card-back p {
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.45;
   margin-top: 0.5rem;
-  padding: 0.6rem 1.2rem;
-  background: #15803D;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: background 0.2s ease;
-}
-
-.download-btn:hover {
-  background: #0f5f2c;
-}
-
-/* =========================================================
-   MODAL (PRESENTATIONS)
-   ========================================================= */
-.presentation-modal {
-  display: none;
-  position: fixed;
-  z-index: 2000;
-  inset: 0;
-  background: rgba(0,0,0,0.75);
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-}
-
-.presentation-modal .modal-content {
-  width: 90%;
-  max-width: 900px;
-  background: white;
-  border-radius: 14px;
-  padding: 1rem;
-  position: relative;
-}
-
-.close-modal {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 2rem;
-  color: #333;
-  cursor: pointer;
-}
-
-.presentation-modal iframe {
-  width: 100%;
-  height: 80vh;
-  border: none;
-  border-radius: 10px;
 }
 
 /* =========================================================
@@ -411,30 +330,48 @@ iframe {
 footer {
   text-align: center;
   padding: 1rem;
-  background: #FFF9F3;
-  border-top: 1px solid #E5E5E5;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
   position: fixed;
-  bottom: 0; left: 0; right: 0;
-  box-shadow: 0 -4px 16px rgba(0,0,0,0.04);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 900;
 }
 
 footer a {
-  color: #FF8C42;
+  color: #007BFF;
 }
 footer a:hover {
-  color: #D76B00;
   text-decoration: underline;
 }
 
 /* =========================================================
-   RESPONSIVE BREAKPOINTS
+   RESPONSIVE ADJUSTMENTS
    ========================================================= */
 @media (max-width: 1100px) {
-  .team-grid { grid-template-columns: repeat(3,1fr); }
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 @media (max-width: 900px) {
-  .team-grid { grid-template-columns: repeat(2,1fr); }
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media (max-width: 600px) {
-  .team-grid { grid-template-columns: 1fr; }
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+  }
+  .nav-links li {
+    margin: 0.5rem 0;
+  }
 }
